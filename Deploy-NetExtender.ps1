@@ -167,7 +167,7 @@ Try {
         {
         Write-Log -Message "Found $($MsiPath32.FullName), now attempting to install $installTitle."
         Show-InstallationProgress "Installing SonicWall NetExtender. This may take some time. Please wait..."
-        Execute-MSI -Action Install -Path "$MsiPath32" -AddParameters "ALLUSERS=1 SERVER=ServerXYZ DOMAIN=vpn.companyxyz.com"
+        Execute-MSI -Action Install -Path "$MsiPath32" -AddParameters "SERVER=ServerXYZ DOMAIN=vpn.companyxyz.com"
         }  
 
         ElseIf($ExePath32.Exists)
@@ -192,21 +192,21 @@ Try {
         {
         Write-Log -Message "Found $($MsiPath64.FullName) and $($Transform64.FullName), now attempting to install $installTitle."
         Show-InstallationProgress "Installing SonicWall NetExtender. This may take some time. Please wait..."
-        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "TRANSFORMS=$Transform64 netlogon=true ALLUSERS=1 SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au"
+        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "TRANSFORMS=$Transform64 netlogon=true SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au"
         }
 
         ElseIf($MsiPath64.Exists)
         {
         Write-Log -Message "Found $($MsiPath64.FullName), now attempting to install $installTitle."
         Show-InstallationProgress "Installing SonicWall NetExtender. This may take some time. Please wait..."
-        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "netlogon=true ALLUSERS=1 SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au"
+        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "netlogon=true SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au"
         }  
 
         ElseIf($ExePath64.Exists)
         {
         Write-Log -Message "Found $($ExePath64.FullName), now attempting to install $installTitle."
         Show-InstallationProgress "Installing  SonicWall NetExtender. This may take some time. Please wait..."
-        Execute-Process -Path "$ExePath64" -Parameters "/S netlogon=true ALLUSERS=1 SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au" -WindowStyle Hidden
+        Execute-Process -Path "$ExePath64" -Parameters "/S netlogon=true SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au" -WindowStyle Hidden
         Start-Sleep -Seconds 10
         }
         }
