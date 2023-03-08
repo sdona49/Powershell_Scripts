@@ -192,7 +192,7 @@ Try {
         {
         Write-Log -Message "Found $($MsiPath64.FullName) and $($Transform64.FullName), now attempting to install $installTitle."
         Show-InstallationProgress "Installing SonicWall NetExtender. This may take some time. Please wait..."
-        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "TRANSFORMS=$Transform64"
+        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "TRANSFORMS=$Transform64 netlogon=true ALLUSERS=1 SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au"
         }
 
         ElseIf($MsiPath64.Exists)
@@ -206,7 +206,7 @@ Try {
         {
         Write-Log -Message "Found $($ExePath64.FullName), now attempting to install $installTitle."
         Show-InstallationProgress "Installing  SonicWall NetExtender. This may take some time. Please wait..."
-        Execute-Process -Path "$ExePath64" -Parameters "/S" -WindowStyle Hidden
+        Execute-Process -Path "$ExePath64" -Parameters "/S netlogon=true ALLUSERS=1 SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au" -WindowStyle Hidden
         Start-Sleep -Seconds 10
         }
         }
