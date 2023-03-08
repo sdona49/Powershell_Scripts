@@ -199,7 +199,7 @@ Try {
         {
         Write-Log -Message "Found $($MsiPath64.FullName), now attempting to install $installTitle."
         Show-InstallationProgress "Installing SonicWall NetExtender. This may take some time. Please wait..."
-        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "netlogon=true ALLUSERS=2 SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au"
+        Execute-MSI -Action Install -Path "$MsiPath64" -AddParameters "netlogon=true ALLUSERS=1 SERVER=gbassoc.com.au:4433 DOMAIN=gbassoc.com.au"
         }  
 
         ElseIf($ExePath64.Exists)
