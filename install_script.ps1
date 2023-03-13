@@ -27,4 +27,4 @@ Copy-Item -Path "$env:UserProfile\Downloads\PADT\Toolkit\" -Destination "$env:Us
 Copy-Item -Path "$env:UserProfile\Downloads\PADT\Toolkit\Files" -Destination "$env:UserProfile\Downloads\NetExtender\Files"
 
 #Run Installation
-Powershell.exe -ExecutionPolicy Bypass $PowershellOutFile -DeploymentType "Install" -DeployMode "NonInteractive"
+Powershell.exe -ExecutionPolicy Bypass $PowershellOutFile -DeploymentType "Uninstall" -DeployMode "NonInteractive"
