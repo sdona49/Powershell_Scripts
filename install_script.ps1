@@ -1,6 +1,7 @@
 #Create Directory
 New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\NetExtender\Files\"
 New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\PADT\"
+New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\NetExtender\AppDeployToolkit\"
 
 #INSTALL VARIABLES
 $ToolDownload = "https://software.sonicwall.com/NetExtender/NetExtender-x64-10.2.331.MSI"
@@ -22,7 +23,7 @@ Invoke-WebRequest -Uri $PowershellDownload  -OutFile $PowershellOutFile | Out-Nu
 #Extract Toolkit
 Unblock-File -Path "$env:UserProfile\Downloads\PSAppDeployToolkit_v3.8.4.zip"
 Expand-Archive -Path "$env:UserProfile\Downloads\PSAppDeployToolkit_v3.8.4.zip" -DestinationPath $env:UserProfile\Downloads\PADT
-Copy-Item -Path "$env:UserProfile\Downloads\PADT\Toolkit\" -Destination "$env:UserProfile\Downloads\NetExtender" -Recurse
+Copy-Item -Path "$env:UserProfile\Downloads\PADT\Toolkit\AppDeployToolkit\" -Destination "$env:UserProfile\Downloads\NetExtender\AppDeployToolkit\" -Recurse
 Copy-Item -Path "$env:UserProfile\Downloads\PADT\Toolkit\Files" -Destination "$env:UserProfile\Downloads\NetExtender\Files"
 
 #Run Installation
