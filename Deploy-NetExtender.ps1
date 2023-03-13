@@ -237,7 +237,7 @@ Try {
         [string]$installPhase = 'Uninstallation'
 
         ## Uninstall Any Existing Versions of SonicWall NetExtender (MSI)
-        Remove-MSIApplications -Name 'SonicWall NetExtender' -AddParameters 'REMOVE=ALL' -IsMsiInstalled:$true
+        Remove-MSIApplications -Name 'SonicWall NetExtender' -AddParameters 'REMOVE=ALL'
 
         ## Uninstall Any Existing Versions of SonicWall NetExtender (EXE)
         $AppList = Get-InstalledApplication -Name 'SonicWall NetExtender'        
