@@ -1,7 +1,6 @@
 #Create Directory
 New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\NetExtender\Files\"
 New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\PADT\"
-New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\NetExtender\AppDeployToolkit\"
 
 #INSTALL VARIABLES
 $ToolDownload = "https://software.sonicwall.com/NetExtender/NetExtender-x64-10.2.331.MSI"
@@ -27,4 +26,4 @@ Copy-Item -Path "$env:UserProfile\Downloads\PADT\Toolkit\" -Destination "$env:Us
 Copy-Item -Path "$env:UserProfile\Downloads\PADT\Toolkit\Files" -Destination "$env:UserProfile\Downloads\NetExtender\Files"
 
 #Run Installation
-Powershell.exe -ExecutionPolicy Bypass $PowershellOutFile -DeploymentType "Uninstall" -DeployMode "NonInteractive"
+Powershell.exe -ExecutionPolicy Bypass $PowershellOutFile -DeploymentType "Install" -DeployMode "NonInteractive"
