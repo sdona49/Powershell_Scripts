@@ -1,6 +1,6 @@
 $PowershellOutFile = "$env:UserProfile\Downloads\NetExtender\Deploy-NetExtender.ps1"
 
 #Run Installation
-Powershell.exe -ExecutionPolicy Bypass $PowershellOutFile -DeploymentType "Install" -DeployMode "NonInteractive" -wait
+Powershell.exe -ExecutionPolicy Bypass $PowershellOutFile -DeploymentType "Install" -DeployMode "NonInteractive" -WindowStyle Hidden
 
-Get-Process rundll32 | Stop-Process
+#Get-Process rundll32 | Stop-Process
