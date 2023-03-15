@@ -4,7 +4,7 @@ New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\PADT\"
 New-Item -ItemType Directory -Path "$env:UserProfile\Downloads\NetExtender\AppDeployToolkit\"
 
 #INSTALL VARIABLES
-$ToolDownload = "https://software.sonicwall.com/NetExtender/NetExtender-x64-10.2.331.MSI"
+$ToolDownload = "https://raw.githubusercontent.com/sdona49/Powershell_Scripts/main/NetExtender-x64-10.2.331.MSI"
 $ToolOutFile = "$env:UserProfile\Downloads\NetExtender\Files\NetExtender-x64-10.2.331.MSI"
 $ToolkitDownload = "https://github.com/PSAppDeployToolkit/PSAppDeployToolkit/releases/download/3.8.4/PSAppDeployToolkit_v3.8.4.zip"
 $ToolkitOutFile = "$env:UserProfile\Downloads\PSAppDeployToolkit_v3.8.4.zip"
