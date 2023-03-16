@@ -1,4 +1,4 @@
-$PowershellOutFile = "$env:UserProfile\Downloads\NetExtender\Files\NetExtender-x64-10.2.331.MSI"
+$PowershellOutFile = "$env:UserProfile\Downloads\NetExtender\Deploy-NetExtender.ps1"
 
 #Run Installation
 Powershell.exe -ExecutionPolicy Bypass $PowershellOutFile -DeploymentType "Install" -DeployMode "NonInteractive"
